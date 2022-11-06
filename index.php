@@ -7,7 +7,7 @@ $db =openDb();
 $sql='select * from item';
 $query = $db-> query($sql);
 $results=$query -> fetchAll(PDO::FETCH_ASSOC);
-$json=json_encode($results, JSON_PRETTY_PRINT);
+$json=json_encode($results);
 header('HTTP/1.1 200 OK');
 print $json;
 } catch(PDOException $pdoex){
